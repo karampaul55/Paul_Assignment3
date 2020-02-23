@@ -1,3 +1,5 @@
+// Karam Paul
+// Final Product Confirmed
 import java.security.SecureRandom ;
 import java.util.* ;
 
@@ -10,10 +12,11 @@ public class CAI2 {
 	/* The quiz should generate two random numbers. It should also store the correct answer. 
 	 *Then read in the users answer. Compare the two and display message. 
 	 *The user should repeat until the correct answer is found. */
-	private static void quiz() {
+	private static void quiz() 
+	{
 		SecureRandom rdmNumber = new SecureRandom();
-		int num1 = rdmNumber.nextInt(9);
-		int num2 = rdmNumber.nextInt(9);
+		int num1 = rdmNumber.nextInt(10);
+		int num2 = rdmNumber.nextInt(10);
 		int correctAnswer = num1 * num2;
 		int check = 0;
 		
@@ -27,18 +30,21 @@ public class CAI2 {
 	}
 	
 	// This function should take in the two randomly generated integers
-	private static void askQuestion(int num1 , int num2) {
+	private static void askQuestion(int num1 , int num2) 
+	{
 		System.out.println("How much is " + num1 + " times " + num2 + "?"  );
 	}
 	
 	// Read in the users attempt
-	private static int readResponse() {
+	private static int readResponse() 
+	{
 		Scanner response = new Scanner(System.in);
 		return response.nextInt();
 	}
 	
 	// compare with the known correct answer. Should take in the correct answer and the users attempt
-	private static int isAnswerCorrect(int correctAnswer , int attempt) {
+	private static int isAnswerCorrect(int correctAnswer , int attempt) 
+	{
 		if (correctAnswer == attempt) {
 			
 			return 1;
@@ -49,7 +55,8 @@ public class CAI2 {
 		}
 	}
 	
-	private static void displayCorrectResponse() {
+	private static void displayCorrectResponse() 
+	{
 		SecureRandom correctChoice = new SecureRandom();
 		int choice1 = correctChoice.nextInt(4);
 		
@@ -67,9 +74,12 @@ public class CAI2 {
 				System.out.println("Keep up the good work!");
 				break;
 		}
+		System.out.println("System exiting...");
+		System.exit(0);
 	}
 	
-	private static void displayIncorrectResponse() {
+	private static void displayIncorrectResponse() 
+	{
 		SecureRandom incorrectChoice = new SecureRandom();
 		int choice2 = incorrectChoice.nextInt(4);
 		
@@ -90,11 +100,14 @@ public class CAI2 {
 	}
 	
 	//added method to simply quiz logic
-	private static void displayMessage(int check) {
-		if (check == 1) {
+	private static void displayMessage(int check) 
+	{
+		if (check == 1) 
+		{
 			displayCorrectResponse();
 		}
-		else {
+		else 
+		{
 			displayIncorrectResponse();
 		}
 	}
